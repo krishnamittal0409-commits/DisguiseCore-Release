@@ -1,5 +1,5 @@
 # ==============================================================================
-# aka - Dynamic Nickname, Rank Disguise & Skin System
+# DisguiseCore - Dynamic Nickname, Rank Disguise & Universal Skin Engine
 # Author: Krishna Mittal | All rights reserved.
 # Designed for Paper, Purpur, Folia, and Spigot (1.20 - modern versions)
 # ==============================================================================
@@ -72,7 +72,7 @@ auth-security:
 
 # Skin Disguise System
 # External Services Notice:
-# aka uses the public Mojang API (https://api.mojang.com) and Mineskin API (https://api.mineskin.org)
+# DisguiseCore uses the public Mojang API (https://api.mojang.com) and Mineskin API (https://api.mineskin.org)
 # strictly to fetch skin texture values and cryptographic signatures. No personal data or credentials
 # are ever collected or transmitted. Set 'enabled: false' below to disable all external skin requests.
 skins:
@@ -80,16 +80,75 @@ skins:
   enabled: true
 
   # Automatically fetch and apply the skin corresponding to the chosen nickname if it is a real Minecraft account
+  # e.g., Running '/nick ClownPierce' will automatically download and apply ClownPierce's official skin!
   auto-fetch-name-skin: true
+
+  # Famous creator & popular skin presets available via the /skins command
+  famous-creators:
+    - 'ClownPierce'
+    - 'Technoblade'
+    - 'Dream'
+    - 'Camman18'
+    - 'ParrotX2'
+    - 'Rekrap2'
+    - 'WadZee'
+    - 'Grian'
+    - 'MumboJumbo'
+    - 'DanTDM'
+    - 'CaptainSparklez'
+    - 'IlluminaHD'
 
   # Mineskin API endpoint for uploading custom skin URLs/files
   mineskin-api-url: 'https://api.mineskin.org/generate/url'
 
-  # Custom skins directory name (inside plugins/aka/)
+  # Custom skins directory name (inside plugins/DisguiseCore/)
   local-skins-folder: 'skins'
 
   # Restore original player skin when /unnick is executed
   restore-on-unnick: true
+
+# ==============================================================================
+# SkinRestorer Compatibility & Auto-Restore System
+# Automatically restores official Mojang skins for cracked / offline servers.
+# Saves and persists player skin choices across server restarts.
+# ==============================================================================
+skin-restorer:
+  # Enable automatic skin restoration for players joining the server
+  # Resolves player skins from Mojang session servers on cracked / offline networks
+  auto-restore-on-join: true
+
+  # Automatically detect and sign custom skins from cracked launchers (TLauncher, Ely.by)
+  # When enabled, cracked players with skins on TLauncher or Ely.by have their skins automatically
+  # signed and shown to ALL players on the server, including vanilla/Lunar/Badlion users.
+  cracked-launcher-detection: true
+
+  # Remember and persist custom /skin selections across server restarts
+  persist-skins: true
+
+  # Cooldown in seconds between skin changes for non-admin players (0 to disable)
+  cooldown-seconds: 5
+
+  # Default skin applied if an offline/cracked player has no premium Mojang account
+  # Options: 'DEFAULT' (vanilla Steve/Alex), or any player name (e.g. 'Steve', 'ClownPierce')
+  default-fallback-skin: 'DEFAULT'
+
+  # Enable SkinsRestorer /sr command compatibility
+  enable-sr-aliases: true
+
+# ==============================================================================
+# Update Checker & Notification System
+# Notifies server administrators of new releases, patches, and security updates.
+# Checks GitHub/Modrinth release APIs asynchronously without delaying server boot.
+# ==============================================================================
+update-checker:
+  # Enable automatic background update checks
+  enabled: true
+
+  # Notify operators and admins with 'disguisecore.admin' permission on join when an update is available
+  notify-admins-on-join: true
+
+  # Check frequency in hours (default: 6 hours)
+  check-interval-hours: 6
 
 # Disallowed / Blacklisted Nicknames
 blacklist:

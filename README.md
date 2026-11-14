@@ -55,13 +55,13 @@ Most nickname plugins break cracked/offline-mode servers and authentication plug
 Pre-compiled builds are available to match your server runtime:
 * 🟢 **Minecraft 1.20 Series (`1.20` – `1.20.6`):**
   * Java Runtime: **Java 17 LTS+**
-  * Recommended Build: `DisguiseCore-1.0.0-Java17.jar`
+  * Recommended Build: `DisguiseCore-1.0.3-Java17.jar`
 * 🟢 **Minecraft 1.21 Series (`1.21` – `1.21.4+`):**
   * Java Runtime: **Java 21 LTS+**
-  * Recommended Build: `DisguiseCore-1.0.0-Java21.jar` / `DisguiseCore-1.0.0.jar`
+  * Recommended Build: `DisguiseCore-1.0.3-Java21.jar` / `DisguiseCore-1.0.3.jar`
 * 🟢 **Modern & Future Versions (`1.21.x` – `26.3`):**
   * Java Runtime: **Java 21 LTS+**
-  * Recommended Build: `DisguiseCore-1.0.0.jar`
+  * Recommended Build: `DisguiseCore-1.0.3.jar`
 
 **Supported Platforms:** Paper, Purpur, Folia (with universal `PlatformScheduler` support), and Spigot.
 
@@ -87,25 +87,25 @@ To provide skin signing and universal cracked launcher compatibility (TLauncher,
 | `/nick <name> [player]` | `disguisecore.others` | Change another player's nickname (Staff) |
 | `/unnick` | `disguisecore.use` | Restore your original identity and skin |
 | `/unnick [player]` | `disguisecore.others` | Clear another player's nickname (Staff) |
-| `/skin <player\|url\|clear\|update>` | `disguisecore.skin` | Change, reset, or refresh your skin (SkinsRestorer compatible) |
-| `/skin set <player>` | `disguisecore.skin` | SkinsRestorer-compatible skin setting |
-| `/skin clear` / `/skin reset` | `disguisecore.skin` | Clear custom skin & restore original/Mojang skin |
-| `/skin update` | `disguisecore.skin` | Force refresh your skin from Mojang session servers |
-| `/skins` / `/skin menu` | `disguisecore.skin` | Open the interactive Skin Wardrobe GUI |
+| `/skin <player|url|clear|update>` | None (Everyone) | Change, reset, or refresh your skin (universal access) |
+| `/skin set <player>` | None (Everyone) | SkinsRestorer-compatible skin setting |
+| `/skin clear` / `/skin reset` | None (Everyone) | Clear custom skin & restore original/Mojang skin |
+| `/skin update` | None (Everyone) | Force refresh your skin from Mojang session servers |
+| `/skins` | None (Everyone) | View famous creator presets directly in chat |
 | `/skin <...> [player]` | `disguisecore.others` | Change another player's skin (Staff) |
-| `/sr <reload\|set\|clear\|status>` | `disguisecore.admin` | Administrative SkinsRestorer drop-in commands |
+| `/sr <reload|set|clear|status>` | `disguisecore.admin` | Administrative SkinsRestorer drop-in commands |
 | `/realname <nickname>` | `disguisecore.realname` | Look up the real identity of a disguised player |
 | `/dc list` / `/disguisecore list` | `disguisecore.admin` | View all active disguises, real names, and ranks |
-| `/dc update [check\|info]` | `disguisecore.admin` | Check for updates and view release changelog |
+| `/dc update` | `disguisecore.admin` | Check and automatically download latest version |
 | `/dc reload` / `/disguisecore reload` | `disguisecore.admin` | Reload configuration, messages, and skin cache |
-| `/dc` / `/disguisecore` | `disguisecore.gui` | Open the master interactive GUI Dashboard |
+| `/dc help` / `/disguisecore` | None (Everyone) | View available DisguiseCore commands |
 
 ### Permission Hierarchy
 - `disguisecore.*`: Full access to all plugin features.
-- `disguisecore.admin`: Administrative control (`/dc reload`, `/dc list`, `/realname`, `/sr`).
+- `disguisecore.admin`: Administrative control (`/dc reload`, `/dc list`, `/realname`, `/sr`, `/dc update`).
 - `disguisecore.use`: Permission to nickname oneself (assign to YouTuber / Media group).
-- `disguisecore.skin`: Permission to change skin.
-- `disguisecore.skin.url`: Permission to use external image URLs.
+- `disguisecore.skin`: Permission to change skin (granted to all players by default).
+- `disguisecore.skin.url`: Permission to use external image URLs (granted to all players by default).
 - `disguisecore.skin.bypasscooldown`: Bypass anti-spam skin changing cooldown.
 - `disguisecore.color`: Permission to use colors (`&a`, `&l`, `&#HEX`) in nicknames.
 - `disguisecore.others`: Permission to manage disguises for other players.
@@ -114,10 +114,11 @@ To provide skin signing and universal cracked launcher compatibility (TLauncher,
 
 ---
 
-## 🎨 Interactive In-Game GUI Dashboard (`/disguisecore` or `/dc`)
-* **Strict Non-OP Isolation**: YouTubers and content creators only see their own disguise tools and skin wardrobe; staff oversight panels and system security tabs are completely hidden from non-staff players.
-* **Skin Wardrobe Grid**: One-click equipping for famous creators (**ClownPierce**, **Technoblade**, **Dream**, **Camman18**, etc.) with left-click (equip skin) and right-click (equip skin + disguise nickname).
-* **System & Security Panel**: Live LuckPerms status, SkinsRestorer auto-restore toggle, AuthMe UUID integrity check, and one-click update checking.
+## ⚡ Pure Command-Based Architecture
+* **Zero Inventory Glitches**: Eliminates inventory GUI menus entirely to avoid client-side inventory desyncs, cursor freezes, or container event conflicts.
+* **Universal Skin Command**: Every player on your server can use `/skin <name>` or `/skins` right out of the box without needing complex permissions configured.
+* **Instant In-Chat Wardrobe**: Running `/skins` outputs popular creator skins directly in chat for instant equipping.
+* **In-Game Auto-Update**: Run `/dc update` to automatically fetch and stage plugin updates directly to `plugins/update/` without touching your configuration.
 
 ---
 
