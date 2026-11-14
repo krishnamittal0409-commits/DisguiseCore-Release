@@ -25,9 +25,11 @@
 
 ## 🛡️ Overview
 
-Many content creators and server administrators cannot play casually without being chased, targeted, or stream-sniped. **aka** provides a robust, seamless disguise engine that modifies:
-- **Player Nickname** (custom names or random generator)
-- **Player Skin** (Mojang player names, direct PNG URLs, or local presets via Mineskin API)
+Many content creators and server administrators cannot play casually without being chased, targeted, or stream-sniped. **aka** provides a robust, seamless disguise engine and full-featured **SkinRestorer** that manages:
+- **Player Nicknames & Disguises** (custom names or random generator)
+- **Built-in SkinsRestorer Engine** (automatically restores official Mojang skins for offline/cracked servers on join)
+- **Famous Creator Presets** (instant one-click skins for ClownPierce, Technoblade, Dream, Camman18, and more)
+- **Custom Skin URLs & Uploads** (signed on-the-fly via Mineskin API without client mods)
 - **TAB List Formatting** (Adventure Component rendering)
 - **Overhead NameTag** (Scoreboard teams with disguised prefixes)
 - **Chat Formatting** (Native Adventure `AsyncChatEvent` + legacy fallback)
@@ -83,9 +85,13 @@ To provide skin signing without requiring client-side mods, **aka** connects to 
 | `/nick <name> [player]` | `aka.others` | Change another player's nickname (Staff) |
 | `/unnick` | `aka.use` | Restore your original identity and skin |
 | `/unnick [player]` | `aka.others` | Clear another player's nickname (Staff) |
-| `/skin <player\|url\|reset>` | `aka.skin` | Change your skin while nicked |
-| `/skin <url>` | `aka.skin.url` | Apply custom skins from image URLs |
+| `/skin <player\|url\|clear\|update>` | `aka.skin` | Change, reset, or refresh your skin (SkinsRestorer compatible) |
+| `/skin set <player>` | `aka.skin` | SkinsRestorer-compatible skin setting |
+| `/skin clear` / `/skin reset` | `aka.skin` | Clear custom skin & restore original/Mojang skin |
+| `/skin update` | `aka.skin` | Force refresh your skin from Mojang session servers |
+| `/skins` / `/skin menu` | `aka.skin` | Open the interactive Skin Wardrobe GUI |
 | `/skin <...> [player]` | `aka.others` | Change another player's skin (Staff) |
+| `/sr <reload\|set\|clear\|status>` | `aka.admin` | Administrative SkinsRestorer drop-in commands |
 | `/realname <nickname>` | `aka.realname` | Look up the real identity of a disguised player |
 | `/aka list` | `aka.admin` / `aka.realname` | View all active disguises, real names, and ranks |
 | `/aka reload` | `aka.admin` | Reload configuration, messages, and skin cache |
