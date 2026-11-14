@@ -1,0 +1,133 @@
+# ==============================================================================
+# aka - Dynamic Nickname, Rank Disguise & Skin System
+# Author: Krishna Mittal | All rights reserved.
+# Designed for Paper, Purpur, Folia, and Spigot (1.20 - modern versions)
+# ==============================================================================
+
+settings:
+  # Minimum and maximum character length for custom nicknames
+  min-length: 3
+  max-length: 16
+
+  # Regex pattern for allowed nickname characters
+  # Default: Alphanumeric and underscores only (standard Minecraft usernames)
+  allowed-pattern: '^[a-zA-Z0-9_]+$'
+
+  # Update player name in the TAB player list
+  update-tab-list: true
+
+  # Format for player display in the tab list
+  # Placeholders: {prefix}, {nick}, {suffix}
+  tab-format: '{prefix}{nick}{suffix}'
+
+  # Update player name in chat
+  update-chat: true
+
+  # Chat format when nicked (if no dedicated chat management plugin overrides it)
+  chat-format: '{prefix}{nick}{suffix}&f: {message}'
+
+  # Update the overhead nametag above player heads using scoreboard teams
+  update-nametag: true
+
+  # Update death messages to show the nickname instead of real name
+  update-death-messages: true
+
+  # Automatically restore previous nickname on rejoin
+  persist-on-rejoin: true
+
+# LuckPerms Rank & Group Integration
+luckperms:
+  # Enable LuckPerms rank integration
+  enabled: true
+
+  # When enabled, disguises the player's rank prefix to avoid revealing YouTuber / Staff status
+  disguise-rank: true
+
+  # The default rank prefix applied to disguised players
+  default-disguise-prefix: '&7'
+
+  # The default rank suffix applied to disguised players
+  default-disguise-suffix: ''
+
+  # Specific rank-to-rank disguise overrides
+  # Example: If a YouTuber has the group 'youtuber', their prefix will disguise as 'default'
+  rank-disguises:
+    youtuber: 'default'
+    media: 'default'
+    admin: 'default'
+    mod: 'default'
+    helper: 'default'
+
+# Authentication & Cracked Server Protection (AuthMe, nLogin, FastLogin)
+# Ensures player UUIDs are NEVER modified, preventing inventory loss or auth bypass.
+auth-security:
+  # Prevent players from choosing a nickname that matches an existing registered user
+  prevent-impersonation: true
+
+  # Block nick commands if the player is not authenticated yet in AuthMe
+  require-login: true
+
+  # Prevent nicking into existing online or offline players
+  block-existing-players: true
+
+# Skin Disguise System
+# External Services Notice:
+# aka uses the public Mojang API (https://api.mojang.com) and Mineskin API (https://api.mineskin.org)
+# strictly to fetch skin texture values and cryptographic signatures. No personal data or credentials
+# are ever collected or transmitted. Set 'enabled: false' below to disable all external skin requests.
+skins:
+  # Master toggle for skin fetching and applying
+  enabled: true
+
+  # Automatically fetch and apply the skin corresponding to the chosen nickname if it is a real Minecraft account
+  auto-fetch-name-skin: true
+
+  # Mineskin API endpoint for uploading custom skin URLs/files
+  mineskin-api-url: 'https://api.mineskin.org/generate/url'
+
+  # Custom skins directory name (inside plugins/aka/)
+  local-skins-folder: 'skins'
+
+  # Restore original player skin when /unnick is executed
+  restore-on-unnick: true
+
+# Disallowed / Blacklisted Nicknames
+blacklist:
+  - 'admin'
+  - 'administrator'
+  - 'owner'
+  - 'moderator'
+  - 'mod'
+  - 'helper'
+  - 'staff'
+  - 'console'
+  - 'server'
+
+# Predefined Random Nicknames Pool (for /nick random)
+random-names:
+  - 'Alex_Craft'
+  - 'BlueVortex'
+  - 'CosmicRider'
+  - 'DeltaEcho'
+  - 'EnderFox'
+  - 'FrostByte'
+  - 'GhostRider'
+  - 'HyperNova'
+  - 'IronClad'
+  - 'JadePulse'
+  - 'Krypton99'
+  - 'LunarDrift'
+  - 'MysticOnyx'
+  - 'NeonSpark'
+  - 'OmegaStrike'
+  - 'PixelHunter'
+  - 'QuantumStep'
+  - 'RedstoneAce'
+  - 'ShadowFalcon'
+  - 'TitanVanguard'
+  - 'UrbanKnight'
+  - 'ViperStrike'
+  - 'WildCanyon'
+  - 'XenonRider'
+  - 'YellowDune'
+  - 'ZenithChaser'

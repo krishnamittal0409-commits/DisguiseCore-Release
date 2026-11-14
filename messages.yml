@@ -1,0 +1,50 @@
+# ==============================================================================
+# aka - Message Configuration
+# Author: Krishna Mittal | All rights reserved.
+# ==============================================================================
+
+prefix: '&8[&b&laka&8] &7'
+
+no-permission: '&cYou do not have permission to execute this command.'
+player-only: '&cThis command can only be executed by an in-game player.'
+must-login: '&cYou must authenticate with AuthMe before changing your nickname.'
+reloaded: '&aConfiguration and skin caches reloaded successfully.'
+
+nick-success: '&aYour nickname has been set to &e{nick}&a!'
+nick-other-success: '&aYou set &e{player}''s &anickname to &e{nick}&a.'
+nick-other-notify: '&e{admin} &achanged your nickname to &e{nick}&a.'
+
+unnick-success: '&aYour nickname has been cleared and real identity restored.'
+unnick-other-success: '&aCleared nickname for &e{player}&a.'
+unnick-other-notify: '&e{admin} &acleared your nickname.'
+not-nicked: '&cYou are not currently using a nickname.'
+other-not-nicked: '&c{player} does not have an active nickname.'
+
+invalid-name: '&cThe nickname &e{nick} &ccontains invalid characters or does not meet length requirements ({min}-{max} chars).'
+name-blacklisted: '&cThe nickname &e{nick} &cis blacklisted and cannot be used.'
+name-taken: '&cThe name &e{nick} &cis already in use by an active player or registered account.'
+name-same: '&cYour nickname cannot be your current name.'
+
+skin-fetching: '&7Fetching and applying skin, please wait a moment...'
+skin-success: '&aYour skin has been successfully updated!'
+skin-other-success: '&aUpdated skin for &e{player}&a.'
+skin-reset: '&aYour skin has been restored to default.'
+skin-failed: '&cFailed to fetch or apply skin: &e{reason}'
+skin-invalid-url: '&cThe provided skin URL is invalid. It must point to a valid PNG image.'
+
+realname-result: '&7Player &e{nick} &7is actually &a{realname}&7.'
+realname-not-found: '&cNo disguised player found with the nickname &e{nick}&c.'
+
+list-header: '&8&m------------------&r &bDisguised Players &8&m------------------'
+list-entry: '&8- &e{nick} &7(&a{realname}&7) [Group: &b{group}&7]'
+list-empty: '&7No players are currently disguised.'
+list-footer: '&8&m----------------------------------------------------'
+
+help-header: '&8&m------------------&r &baka Commands &8&m------------------'
+help-nick: '&b/nick <name|random> &7- Change your disguise name'
+help-unnick: '&b/unnick &7- Restore your original identity'
+help-skin: '&b/skin <name|url|reset> &7- Change or reset your skin'
+help-realname: '&b/realname <name> &7- Check the real name behind a nickname'
+help-list: '&b/aka list &7- View all disguised players'
+help-reload: '&b/aka reload &7- Reload plugin configuration'
+help-footer: '&8&m--------------------------------------------'
