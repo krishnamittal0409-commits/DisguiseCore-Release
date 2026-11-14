@@ -55,13 +55,13 @@ Most nickname plugins break cracked/offline-mode servers and authentication plug
 Pre-compiled builds are available to match your server runtime:
 * 🟢 **Minecraft 1.20 Series (`1.20` – `1.20.6`):**
   * Java Runtime: **Java 17 LTS+**
-  * Recommended Build: `DisguiseCore-1.0.3-Java17.jar`
+  * Recommended Build: `DisguiseCore-1.0.4-Java17.jar`
 * 🟢 **Minecraft 1.21 Series (`1.21` – `1.21.4+`):**
   * Java Runtime: **Java 21 LTS+**
-  * Recommended Build: `DisguiseCore-1.0.3-Java21.jar` / `DisguiseCore-1.0.3.jar`
+  * Recommended Build: `DisguiseCore-1.0.4-Java21.jar` / `DisguiseCore-1.0.4.jar`
 * 🟢 **Modern & Future Versions (`1.21.x` – `26.3`):**
   * Java Runtime: **Java 21 LTS+**
-  * Recommended Build: `DisguiseCore-1.0.3.jar`
+  * Recommended Build: `DisguiseCore-1.0.4.jar`
 
 **Supported Platforms:** Paper, Purpur, Folia (with universal `PlatformScheduler` support), and Spigot.
 

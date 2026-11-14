@@ -20,6 +20,12 @@ settings:
   # Placeholders: {prefix}, {nick}, {suffix}
   tab-format: '{prefix}{nick}{suffix}'
 
+  # Default tab format when un-nicked: {prefix}, {name}, {suffix}
+  tab-format-default: '{prefix}{name}{suffix}'
+
+  # When enabled, operators see real player identities directly with staff ranks
+  op-direct-visibility: true
+
   # Update player name in chat
   update-chat: true
 
