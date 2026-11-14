@@ -95,6 +95,7 @@ To provide skin signing and universal cracked launcher compatibility (TLauncher,
 | `/sr <reload\|set\|clear\|status>` | `aka.admin` | Administrative SkinsRestorer drop-in commands |
 | `/realname <nickname>` | `aka.realname` | Look up the real identity of a disguised player |
 | `/aka list` | `aka.admin` / `aka.realname` | View all active disguises, real names, and ranks |
+| `/aka update [check\|info]` | `aka.admin` | Check for updates and view release changelog |
 | `/aka reload` | `aka.admin` | Reload configuration, messages, and skin cache |
 
 ### Permission Hierarchy
