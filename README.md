@@ -68,9 +68,9 @@ Pre-compiled builds are available to match your server runtime:
 
 ## 🌐 Third-Party Services Disclosure (Modrinth & CurseForge Compliance)
 
-To provide skin signing and universal launcher compatibility without requiring client-side mods, **aka** connects to external skin endpoints:
+To provide skin signing and universal cracked launcher compatibility (TLauncher, FastClient, SKlauncher, Ely.by, LittleSkin) without requiring client-side mods, **aka** connects to external skin endpoints:
 1. **Mojang API (`https://api.mojang.com` / `https://sessionserver.mojang.com`):** Used to retrieve official texture values and signatures when resolving premium Minecraft accounts.
-2. **TLauncher & Ely.by Databases (`auth.tlauncher.org` / `skinsystem.ely.by`):** Optional cracked launcher resolution used to detect custom skins uploaded on TLauncher or Ely.by.
+2. **Cracked Skin Networks (`auth.tlauncher.org`, `skinsystem.ely.by`, `littleskin.cn`):** Used to detect and retrieve custom skins uploaded on TLauncher, Ely.by, FastClient, and CustomSkinLoader/BlessingSkin networks.
 3. **Mineskin API (`https://api.mineskin.org`):** Used strictly to upload custom PNG image URLs or files and obtain official Mojang cryptographic signatures so clients can render custom skins.
 
 * **Privacy & Data Security:** No player credentials, server IPs, hardware IDs, or personal information are ever collected, stored, or transmitted.
